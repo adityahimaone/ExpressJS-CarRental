@@ -9,6 +9,9 @@
     display: none !important;
   }
 
+  #sidebar {
+    height: 100vw;
+  }
   #sidebar-child {
     display: none;
   }
@@ -62,6 +65,15 @@
   transform: translate(-50%, -50%);
 }
 
+#content {
+  position: relative;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+#sidebar {
+  height: 100vh;
+}
 #sidebar-icon {
   width: 70px;
   background-color: #0d28a6;

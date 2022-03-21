@@ -17,6 +17,7 @@ $font-gray: #8a8a8a;
   }
 
   #sidebar {
+    height: 100vw;
     &-child {
       display: none;
     }
@@ -81,7 +82,14 @@ $font-gray: #8a8a8a;
   }
 }
 
+#content {
+  position: relative;
+  overflow-y: auto;
+  height: 100vh;
+}
+
 #sidebar {
+  height: 100vh;
   &-icon {
     width: 70px;
     background-color: $primary-color;
