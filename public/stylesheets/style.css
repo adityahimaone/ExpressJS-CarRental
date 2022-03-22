@@ -97,6 +97,9 @@
 .bg-colors-primary {
   background-color: #0d28a6 !important;
 }
+.bg-colors-gray {
+  background-color: #f4f5f7 !important;
+}
 
 .text-colors-gray {
   color: #8a8a8a;
@@ -132,14 +135,15 @@
 .logo-parent {
   position: absolute;
   width: 100%;
-  height: 62px;
+  height: 54px;
   left: 0px;
 }
 .logo-nav-2 {
+  z-index: 5;
   background-color: #cfd4ed;
   width: 100px;
   height: 34px;
-  margin: 15px 0px;
+  margin: 10px 0px;
 }
 
 .nav-link:hover {
