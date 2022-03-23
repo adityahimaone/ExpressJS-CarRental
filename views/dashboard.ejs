@@ -1,8 +1,8 @@
 <div>
     <div class="page-header pt-3 ">
-        <p class="d-flex flex-row justify-content-start align-items-center"><span class="fw-bold">Cars</span>
+        <p class="d-flex flex-row justify-content-start align-items-center"><span class="fw-bold">Dashboard</span>
             <i class="bi bi-chevron-right fw-bold"></i><span>Dashboard
-                Dashboard</span>
+            </span>
         </p>
     </div>
     <div class="my-4">
@@ -17,6 +17,7 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">User Email</th>
+                    <th scope="col">Car</th>
                     <th scope="col">Start Rent</th>
                     <th scope="col">Finish Rent</th>
                     <th scope="col">Price</th>
@@ -24,34 +25,36 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
+                <% listOrders.forEach(i=> {
+                    %>
+                    <tr>
+                        <th scope="row">
+                            <%= i.id %>
+                        </th>
+                        <td>
+                            <%= i.email %>
+                        </td>
+                        <td>
+                            <%= i.car %>
+                        </td>
+                        <td>
+                            <%= i.start_rent %>
+                        </td>
+                        <td>
+                            <%= i.finish_rent %>
+                        </td>
+                        <td>
+                            <%= i.price %>
+                        </td>
+                        <td>
+                            <%= i.status %>
+                        </td>
+                    </tr>
+                    <% }) %>
             </tbody>
         </table>
     </div>
-    <div class="d-flex justify-content-between align-items-end">
+    <div class="d-flex flex-column flex-md-row justify-content-md-between justify-content-start gap-3">
         <div class="d-flex">
             <div class="me-4">
                 <label>Limit</label>
@@ -75,9 +78,9 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex align-self-end">
+        <div class="d-flex align-self-center align-self-md-end">
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-end">
+                <ul class="pagination">
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>

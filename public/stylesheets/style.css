@@ -28,7 +28,7 @@
 }
 
 .wrapper-sidebar {
-  min-height: 90vh;
+  min-height: 92vh;
 }
 
 .section {
@@ -257,4 +257,16 @@
 .submit-grup {
   min-height: 18vh !important;
   height: 100% !important;
+}
+
+.modal-footer {
+  border-top: none !important;
+}
+
+.modal-dialog {
+  max-width: 400px !important;
+}
+
+.pagination {
+  margin-bottom: 0px;
 }/*# sourceMappingURL=style.css.map */
