@@ -250,3 +250,34 @@ $bg-color: #f4f5f7;
     padding-left: 30px;
   }
 }
+
+.liner {
+  height: 10px;
+  width: 10px;
+  background-color: $primary-color;
+}
+
+.heading {
+  &-list {
+    margin-left: 10px;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 23px;
+      width: 5px;
+      background-color: $primary-color;
+      margin-left: -8px;
+    }
+  }
+}
+
+.table {
+  background-color: #fff;
+  &-head {
+    background-color: #cfd4ed;
+  }
+  tbody > tr {
+    border-bottom: solid 2px $bg-color;
+  }
+}
