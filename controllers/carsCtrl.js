@@ -1,14 +1,14 @@
-const orders = require("../models/listOrder");
+const cars = require("../models/listCar");
 
 exports.cars = (req, res) => {
-  orders.findAll().then((listOrders) => {
-    console.log(listOrders);
+  cars.findAll().then((car) => {
+    console.log(car);
     res.render("cars", {
-      title: "cars",
+      title: "Cars",
       nav: "CARS",
       nav_child: "List Car",
       layout: "./layouts/sidebar",
-      listOrders,
+      car,
     });
   });
 };
