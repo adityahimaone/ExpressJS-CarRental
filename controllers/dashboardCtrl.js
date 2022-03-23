@@ -8,6 +8,7 @@ exports.dashboard = (req, res) => {
       nav_child: "Dashboard",
       layout: "./layouts/sidebar",
       listOrders,
+      auth: require("./auth"),
     });
   });
 };
