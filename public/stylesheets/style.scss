@@ -39,6 +39,10 @@ $bg-color: #f4f5f7;
   height: 100vh;
 }
 
+.wrapper-sidebar {
+  min-height: 90vh;
+}
+
 .section {
   height: 100vh;
 
@@ -280,4 +284,32 @@ $bg-color: #f4f5f7;
   tbody > tr {
     border-bottom: solid 2px $bg-color;
   }
+}
+
+.select {
+  &-limit {
+    width: 70px !important;
+  }
+
+  &-jump {
+    width: 120px !important;
+  }
+}
+
+.form-required {
+  &::after {
+    content: "*";
+    color: red;
+    font-size: 16px;
+  }
+}
+
+.uploud-icon {
+  position: absolute;
+  right: 10px;
+}
+
+.submit-grup {
+  min-height: 18vh !important;
+  height: 100% !important;
 }

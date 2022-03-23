@@ -1,8 +1,8 @@
 <div>
     <div class="page-header pt-3 ">
         <p class="d-flex flex-row justify-content-start align-items-center"><span class="fw-bold">Cars</span>
-            <i class="bi bi-chevron-right fw-bold"></i><span>List
-                Car</span>
+            <i class="bi bi-chevron-right fw-bold"></i><span>Dashboard
+                Dashboard</span>
         </p>
     </div>
     <div class="my-4">
@@ -50,5 +50,50 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div class="d-flex justify-content-between align-items-end">
+        <div class="d-flex">
+            <div class="me-4">
+                <label>Limit</label>
+                <select class="form-select select-limit" aria-label="Default select example">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
+            </div>
+            <div class="me-4">
+                <label>Jump To Page</label>
+                <div class="d-flex">
+                    <select class="form-select select-jump" aria-label="Default select example">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <button class="btn btn-primary-main">
+                        Go
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex align-self-end">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 </div>
