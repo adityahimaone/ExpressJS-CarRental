@@ -6,10 +6,10 @@
                 <div class="logo-nav">
                 </div>
                 <a href="/dashboard"
-                    class="list-group-item nav-link bg-colors-primary d-inline-block text-truncate d-flex flex-column  align-items-center justify-content-center text-wrap "
+                    class="list-group-item <%- pageActive === 'dashboard' ?  'active' : '' %> nav-link bg-colors-primary d-inline-block text-truncate d-flex flex-column  align-items-center justify-content-center text-wrap "
                     data-bs-parent="#sidebar"><i class="bi bi-house-door"></i> <span>Dashboard</span></a>
-                <a href="/cars" active
-                    class="list-group-item active nav-link bg-colors-primary d-inline-block text-truncate d-flex flex-column  align-items-center justify-content-center text-wrap"
+                <a href="/cars"
+                    class="list-group-item <%- pageActive === 'cars' ?  'active' : '' %> nav-link bg-colors-primary d-inline-block text-truncate d-flex flex-column  align-items-center justify-content-center text-wrap"
                     data-bs-parent="#sidebar"><i class="bi bi-truck"></i><span>Cars</span> </a>
             </div>
             <div id="sidebar-child"
@@ -23,9 +23,7 @@
                 <a href="#"
                     class="list-group-item nav-link d-inline-block text-truncate d-flex flex-column align-items-start text-wrap "
                     data-bs-parent="#sidebar">
-                    <h6>
-                        <%= nav_child %>
-                    </h6>
+                    <%= nav_child %>
                 </a>
             </div>
         </div>

@@ -9,6 +9,7 @@ exports.dashboard = (req, res) => {
       layout: "./layouts/sidebar",
       listOrders,
       auth: require("./auth"),
+      pageActive: "dashboard",
     });
   });
 };

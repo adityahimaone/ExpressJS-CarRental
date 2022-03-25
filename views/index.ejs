@@ -9,20 +9,26 @@
       <div class="d-flex section-fill flex-column justify-content-start">
         <div class="logo-nav-2"></div>
         <h4>Welcome, Admin BCR</h4>
-        <form action="/dashboard" class="mt-4">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Contoh : johndee@gmail.com">
+        <% if (loginFalse) { %>
+          <div class="alert alert-danger" role="alert">
+            Masukkan username dan password yang benar. Perhatikan penggunaan huruf kapital.
           </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="6+ karakter">
-          </div>
-          <div class="d-grid gap-2">
-            <button class="btn btn-primary-main" type="submit">Sign In</button>
-          </div>
-        </form>
+          <% } %>
+            <form action="/" class="mt-1" method="POST">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="Contoh : johndee@gmail.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                  placeholder="6+ karakter">
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary-main" type="submit">Sign In</button>
+              </div>
+            </form>
       </div>
     </div>
   </div>

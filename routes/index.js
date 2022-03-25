@@ -6,6 +6,7 @@ const indexCtrl = require("../controllers/indexCtrl");
 /* GET home page. */
 // router.use("./auth", auth);
 router.get("/", indexCtrl.index);
+router.post("/", indexCtrl.login);
 // router.post("/", auth.api.login);
 
 module.exports = router;

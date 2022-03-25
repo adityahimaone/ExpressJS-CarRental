@@ -4,5 +4,6 @@ exports.addNewCar = (req, res) => {
     layout: "./layouts/sidebar",
     nav: "CARS",
     nav_child: "List Car",
+    pageActive: "addCars",
   });
 };

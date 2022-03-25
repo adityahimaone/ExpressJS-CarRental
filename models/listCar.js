@@ -1,9 +1,11 @@
+const Convert = require("./convertIDR");
+
 const cars = [
   {
     id: 1,
     name: "Kijang Innova",
     image_src: "/images/car.png",
-    price: "Rp. 430.000",
+    price: 430000,
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
     updated_at: "5 Jan 2020, 10.00",
@@ -12,7 +14,7 @@ const cars = [
     id: 2,
     name: "Pajero",
     image_src: "/images/car.png",
-    price: "Rp. 730.000",
+    price: 730000,
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
     updated_at: "6 Jan 2020, 10.00",
@@ -21,7 +23,7 @@ const cars = [
     id: 3,
     name: "Fortuner",
     image_src: "/images/car.png",
-    price: "Rp. 680.000",
+    price: 670000,
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
     updated_at: "7 Jan 2020, 10.00",
@@ -30,7 +32,7 @@ const cars = [
     id: 4,
     name: "Avanza",
     image_src: "/images/car.png",
-    price: "Rp. 455.000",
+    price: 455000,
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
     updated_at: "7 Jan 2020, 10.00",
@@ -39,7 +41,7 @@ const cars = [
     id: 5,
     name: "Zenia",
     image_src: "/images/car.png",
-    price: "Rp. 380.000",
+    price: 380000,
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
     updated_at: "7 Jan 2020, 10.00",
@@ -47,7 +49,16 @@ const cars = [
 ];
 
 module.exports = {
-  findAll: () => Promise.resolve(cars),
+  findAll: () => {
+    return Promise.resolve(
+      cars.map((car) => {
+        return {
+          ...car,
+          price: new Convert(car.price).convertToIDR(),
+        };
+      })
+    );
+  },
   create: ({
     id,
     name,

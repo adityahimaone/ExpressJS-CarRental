@@ -1,3 +1,5 @@
+const Convert = require("./convertIDR");
+
 const orders = [
   {
     id: 1,
@@ -5,7 +7,7 @@ const orders = [
     car: "Kijang Innova",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 500000,
     status: "Success",
   },
   {
@@ -14,7 +16,7 @@ const orders = [
     car: "Avanza",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 300000,
     status: "Success",
   },
   {
@@ -23,7 +25,7 @@ const orders = [
     car: "Avanza",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 450000,
     status: "Pending",
   },
   {
@@ -32,7 +34,7 @@ const orders = [
     car: "Xenia",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 560000,
     status: "Pending",
   },
   {
@@ -41,7 +43,7 @@ const orders = [
     car: "Fortuner",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 670000,
     status: "Success",
   },
   {
@@ -50,7 +52,7 @@ const orders = [
     car: "Alphard",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 800000,
     status: "Pending",
   },
   {
@@ -59,7 +61,7 @@ const orders = [
     car: "Pajero",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 780000,
     status: "Success",
   },
   {
@@ -68,7 +70,7 @@ const orders = [
     car: "Audi",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 500000,
     status: "Pending",
   },
   {
@@ -77,7 +79,7 @@ const orders = [
     car: "Audi",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 500000,
     status: "Pending",
   },
   {
@@ -86,13 +88,22 @@ const orders = [
     car: "Audi",
     start_rent: "2020-01-01",
     finish_rent: "2020-01-02",
-    price: "Rp. 500.000",
+    price: 500000,
     status: "Success",
   },
 ];
 
 module.exports = {
-  findAll: () => Promise.resolve(orders),
+  findAll: () => {
+    return Promise.resolve(
+      orders.map((order) => {
+        return {
+          ...order,
+          price: new Convert(order.price).convertToIDR(),
+        };
+      })
+    );
+  },
   create: ({ id, email, car, start_rent, finish_rent, price, status }) => {
     const no = orders[orders.length - 1].no + 1;
     const ordersData = {
